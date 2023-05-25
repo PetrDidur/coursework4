@@ -1,5 +1,8 @@
+import json
+
 from api import HeadHunterAPI, SuperJobAPI
 from vacancy import Vacancy
+from jsonhandler import JsonHandler
 
 hh_api = HeadHunterAPI()
 superjob_api = SuperJobAPI()
@@ -33,12 +36,13 @@ for item in vacancies_data:
     vacancy = Vacancy(item['title'], item['link'], item['salary'], item['description'])
     vacancies.append(vacancy)
 
-for v in vacancies:
-    print(v)
+vacancies_to_json = [vacancy.to_json() for vacancy in vacancies]
+print(vacancies_to_json)
 
+jsonhandler = JsonHandler()
+#jsonhandler.add_vacancy(vacancies_to_json)
 
-
-
-
+print(jsonhandler.get_vacancy("Junior"))
+jsonhandler.remove_vacancy("Стажер")
 
 

@@ -11,10 +11,10 @@ class Vacancy:
         self.description: str = description
 
     def __str__(self) -> str:
-        return f"{self.__class__.__name__} Название: {self.title}, Ссылка: {self.url}, Зарплата: {self.salary},Описание: {self.description}"
+        return f"Название: {self.title}, Ссылка: {self.url}, Зарплата: {self.salary},Описание: {self.description}"
 
     def __repr__(self):
-        return f"{self.__class__.__name__} Название: {self.title}, Ссылка: {self.url}, Зарплата: {self.salary}, Описание: {self.description}"
+        return f"Название: {self.title}, Ссылка: {self.url},Зарплата: {self.salary}, Описание: {self.description}"
 
     def __lt__(self, other):
         return int(self.salary) < int(other.salary)
@@ -27,6 +27,14 @@ class Vacancy:
 
     def __ge__(self, other):
         return int(self.salary) >= int(other.salary)
+
+    def to_json(self):
+        return {
+            "title": self.title,
+            "description": self.description,
+            "salary": self.salary,
+            "url": self.url
+        }
 
 
 
