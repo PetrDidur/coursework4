@@ -3,6 +3,9 @@ from abc import ABC, abstractmethod
 
 
 class FileHandler(ABC):
+    """
+    Абстрактный класс для работы с файлами
+    """
     @abstractmethod
     def add_vacancy(self, vacancy_data):
         pass
@@ -15,7 +18,9 @@ class FileHandler(ABC):
     def remove_vacancy(self, vacancy_id):
         pass
 
+
 class JsonHandler(FileHandler):
+    """Класс наследуемый от абстрактного для работы с вакансиями HH.ru"""
     def __init__(self):
         self.file_path = "vacancy.json"
 

@@ -2,6 +2,7 @@ from api import HeadHunterAPI, SuperJobAPI
 
 
 class Vacancy:
+    """ Класс Vacancy осужествляющий работу с вакансиями"""
     __slots__ = ("title", "url", "salary", "description")
 
     def __init__(self, title, url, salary, description):
