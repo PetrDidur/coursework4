@@ -2,25 +2,7 @@ import json
 from abc import ABC, abstractmethod
 
 
-class FileHandler(ABC):
-    """
-    Абстрактный класс для работы с файлами
-    """
-    @abstractmethod
-    def add_vacancy(self, vacancy_data):
-        pass
-
-    @abstractmethod
-    def get_vacancy(self, criteria):
-        pass
-
-    @abstractmethod
-    def remove_vacancy(self, vacancy_id):
-        pass
-
-
-class JsonHandler(FileHandler):
-    """Класс наследуемый от абстрактного для работы с вакансиями HH.ru"""
+class JsonHandler:
     def __init__(self):
         self.file_path = "vacancy.json"
 

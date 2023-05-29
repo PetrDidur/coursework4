@@ -43,7 +43,6 @@ class SuperJobAPI(Api):
         }
         params = {
             "keyword": {keyword.lower()},
-            "town": "Москва"
         }
 
         response = requests.get(self.url, headers=headers, params=params)
